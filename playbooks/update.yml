@@ -1,0 +1,16 @@
+- name: Updating Debian Servers
+  hosts:  debian
+  remote_user:  root
+  tasks:
+    - name: Updating all packages to the latest version
+      apt:
+        upgrade:  dist
+
+- name: Updating RHEL Servers
+  hosts:  rhel
+  remote_user:  root  
+  tasks:
+    - name: Updating all packages to the latest version
+      dnf:
+        name: "*"
+        state:  latest
