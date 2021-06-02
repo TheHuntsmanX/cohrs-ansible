@@ -4,7 +4,9 @@
   tasks:
     - name: Updating all packages to the latest version
       apt:
-        upgrade:  dist
+        upgrade:  full
+        autoremove: yes
+        update_cache: yes
 
 - name: Updating RHEL Servers
   hosts:  rhel
