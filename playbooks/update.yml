@@ -11,6 +11,6 @@
   remote_user:  root  
   tasks:
     - name: Updating all packages to the latest version
-      dnf:
+      yum:
         name: "*"
         state:  latest
