@@ -16,3 +16,16 @@
       yum:
         name: "*"
         state:  latest
+- name: Updating SUSE Servers
+  hosts:  suse
+  remote_user:  root
+  tasks:
+    - name: Updating all packages to the latest version
+      zypper:
+        name: "*"
+        state:  latest
+    - name: Apply all available patches
+      zypper:
+        name: "*"
+        state:  latest
+        type: patch
